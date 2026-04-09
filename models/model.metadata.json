@@ -1,0 +1,10 @@
+{
+  "class_labels": [
+    "pituitary",
+    "glioma",
+    "notumor",
+    "meningioma"
+  ],
+  "image_size": 128,
+  "preprocess_mode": "scale_0_1"
+}

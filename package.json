@@ -1,0 +1,9 @@
+{
+  "name": "year-project-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix neuro-ui run dev",
+    "build": "npm --prefix neuro-ui run build",
+    "preview": "npm --prefix neuro-ui run preview"
+  }
+}

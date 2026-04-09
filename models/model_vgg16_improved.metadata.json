@@ -1,0 +1,17 @@
+{
+  "class_labels": [
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
+  ],
+  "image_size": 224,
+  "preprocess_mode": "vgg16",
+  "class_weight": {
+    "0": 1.080999242997729,
+    "1": 1.0664675130694548,
+    "2": 0.8952978056426333,
+    "3": 0.9800960878517502
+  },
+  "best_val_accuracy": 0.5026696920394897
+}
