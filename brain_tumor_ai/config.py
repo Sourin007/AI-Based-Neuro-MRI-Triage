@@ -26,7 +26,7 @@ class Settings:
         project_root = base_dir or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         return cls(
             base_dir=project_root,
-            model_path=os.path.join(project_root, "models", "model.h5"),
+            model_path=os.path.join(project_root, "models", "model_vgg16_improved.keras"),
             knowledge_base_dir=os.path.join(project_root, "knowledge_base"),
             vector_store_dir=os.path.join(project_root, ".vector_store"),
             uploads_dir=os.path.join(project_root, "uploads"),

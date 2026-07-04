@@ -94,6 +94,8 @@ def _build_vgg16_grad_models(model, last_conv_layer_name: str) -> tuple[Model, M
             x = layer(x)
 
     for layer in model.layers[1:]:
+        if layer is base_model:
+            continue
         x = layer(x)
 
     classifier_model = Model(classifier_input, x)

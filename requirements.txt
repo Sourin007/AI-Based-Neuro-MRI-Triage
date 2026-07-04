@@ -1,9 +1,14 @@
 fastapi==0.115.12
 uvicorn==0.34.0
 python-multipart==0.0.20
+flask
 
 numpy==2.0.2
 Pillow==11.1.0
+matplotlib
+scikit-image
+scikit-learn
+seaborn
 
 tensorflow==2.18.0
 keras==3.7.0
@@ -16,3 +21,4 @@ langgraph==0.3.21
 chromadb==0.6.3
 
 werkzeug
+lime

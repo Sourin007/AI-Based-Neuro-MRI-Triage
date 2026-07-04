@@ -5,6 +5,7 @@ __pycache__/
 # Virtual env
 venv/
 env/
+.venv/
 
 # Models
 *.h5
