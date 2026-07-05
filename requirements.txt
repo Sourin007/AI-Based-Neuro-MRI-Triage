@@ -1,18 +1,22 @@
+# Web framework / server
 fastapi==0.115.12
 uvicorn==0.34.0
 python-multipart==0.0.20
-flask
+werkzeug==3.1.8
 
+# Numerics / imaging
 numpy==2.0.2
 Pillow==11.1.0
-matplotlib
-scikit-image
-scikit-learn
-seaborn
+matplotlib==3.10.9
+scikit-image==0.25.2
+scikit-learn==1.7.2
+seaborn==0.13.2
 
+# Deep learning
 tensorflow==2.18.0
 keras==3.7.0
 
+# LLM orchestration / RAG
 langchain==0.3.23
 langchain-community==0.3.21
 langchain-openai==0.3.12
@@ -20,5 +24,10 @@ langchain-text-splitters==0.3.8
 langgraph==0.3.21
 chromadb==0.6.3
 
-werkzeug
-lime
+# Explainability
+lime==0.2.0.1
+
+# Observability / hardening
+structlog==25.4.0
+sentry-sdk[fastapi]==2.35.0
+slowapi==0.1.9

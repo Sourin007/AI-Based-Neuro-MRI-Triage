@@ -1,0 +1,29 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# VCS / CI
+.git/
+.gitignore
+.github/
+
+# Frontend (deployed separately to Vercel/Netlify)
+neuro-ui/
+
+# Runtime-generated (recreated fresh inside the container)
+uploads/
+.vector_store/
+
+# Local tooling / editor / secrets
+.vscode/
+.claude/
+.env
+
+# Dev-only files not needed in the runtime image
+requirements-dev.txt
+tests/
+README.md
+Dockerfile
+.dockerignore
