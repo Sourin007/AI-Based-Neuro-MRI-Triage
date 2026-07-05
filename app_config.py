@@ -19,6 +19,7 @@ def _split_csv(value: str) -> tuple[str, ...]:
 class AppConfig:
     environment: str
     cors_allow_origins: tuple[str, ...]
+    cors_allow_origin_regex: str | None
     max_upload_bytes: int
     analyze_rate_limit: str
     sentry_dsn: str | None
@@ -42,6 +43,9 @@ class AppConfig:
         config = cls(
             environment=environment,
             cors_allow_origins=origins,
+            # Regex matching a family of allowed origins (e.g. all of a project's
+            # Vercel URLs: production alias + per-deployment + preview URLs).
+            cors_allow_origin_regex=os.getenv("CORS_ALLOW_ORIGIN_REGEX") or None,
             max_upload_bytes=int(max_upload_mb * 1024 * 1024),
             analyze_rate_limit=os.getenv("ANALYZE_RATE_LIMIT", "10/minute"),
             sentry_dsn=os.getenv("SENTRY_DSN") or None,
@@ -56,10 +60,11 @@ class AppConfig:
             raise RuntimeError("MAX_UPLOAD_MB must be greater than 0.")
 
         if self.environment == "production":
-            if not self.cors_allow_origins:
+            if not self.cors_allow_origins and not self.cors_allow_origin_regex:
                 raise RuntimeError(
-                    "CORS_ALLOW_ORIGINS must be set to your frontend origin(s) in production "
-                    "(comma-separated), e.g. https://your-app.vercel.app"
+                    "In production, set CORS_ALLOW_ORIGINS (comma-separated frontend origins) "
+                    "and/or CORS_ALLOW_ORIGIN_REGEX (a regex matching allowed origins), "
+                    "e.g. https://your-app.vercel.app"
                 )
             if "*" in self.cors_allow_origins:
                 raise RuntimeError(

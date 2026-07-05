@@ -63,6 +63,7 @@ app.add_middleware(RequestIDMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=list(config.cors_allow_origins),
+    allow_origin_regex=config.cors_allow_origin_regex,
     allow_credentials=False,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
